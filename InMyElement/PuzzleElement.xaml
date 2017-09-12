@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="InMyElement.PuzzleElement"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InMyElement"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="56" Height="60">
+    <Grid>
+        <Rectangle x:Name="ElementBox"
+                       Width="56"
+                       Height="60"
+                   AllowDrop="False"
+                   StrokeThickness="5"
+                   Stroke="PaleVioletRed"
+                   Fill="Black"
+                   HorizontalAlignment="Left"
+                       VerticalAlignment="Top"/>
+        <TextBlock x:Name="ElementText"
+    		Text="1"           
+    		AllowDrop="True"
+    		FontSize="30"
+    		TextAlignment="Center"
+    		Foreground="White"
+    		Width="56"
+    		Height="60"
+    		VerticalAlignment="Top"
+    		HorizontalAlignment="Left"
+    		LineHeight="48"
+    		FontWeight="Bold"
+    		Padding="0,14,0,0" />
+    </Grid>
+</UserControl>

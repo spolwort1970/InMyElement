@@ -1,0 +1,33 @@
+﻿<Application
+    x:Class="InMyElement.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InMyElement">
+
+
+    <Application.Resources>
+        <SolidColorBrush x:Key="Actinoid"
+                         Color="Violet" />
+        <SolidColorBrush x:Key="AlkaliMetal"
+                         Color="Orange" />
+        <SolidColorBrush x:Key="AlkalineEarth"
+                         Color="Yellow" />
+        <SolidColorBrush x:Key="Halogen"
+                         Color="Aquamarine" />
+        <SolidColorBrush x:Key="Lanthanoid"
+                         Color="PaleGoldenrod" />
+        <SolidColorBrush x:Key="Metalloid"
+                         Color="MediumSeaGreen" />
+        <SolidColorBrush x:Key="Noble"
+                         Color="DeepSkyBlue" />
+        <SolidColorBrush x:Key="NonMetal"
+                         Color="LightGreen" />
+        <SolidColorBrush x:Key="PostTransitionMetal"
+                         Color="Green" />
+        <SolidColorBrush x:Key="TransitionMetal"
+                         Color="PaleVioletRed" />
+        <SolidColorBrush x:Key="Default"
+                         Color="#FFED1C24" />
+    </Application.Resources>
+
+</Application>

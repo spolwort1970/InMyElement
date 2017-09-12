@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59ED6450-13B3-48CB-8996-511E41BA1005}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InMyElement</RootNamespace>
+    <AssemblyName>InMyElement</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>InMyElement_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT81, Version=3.20.1">
+      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="DataModel\Element.cs" />
+    <Compile Include="DataModel\ElementProperty.cs" />
+    <Compile Include="DataModel\GroupColorMatching.cs" />
+    <Compile Include="DataModel\GroupMatching.cs" />
+    <Compile Include="DataModel\HighScore.cs" />
+    <Compile Include="DataModel\IDataRepository.cs" />
+    <Compile Include="DataModel\Property.cs" />
+    <Compile Include="DataModel\QuizScore.cs" />
+    <Compile Include="DataModel\PuzzleScore.cs" />
+    <Compile Include="DataModel\QuizViewModel.cs" />
+    <Compile Include="DataModel\PuzzleViewModel.cs" />
+    <Compile Include="DataModel\QuizLevel.cs" />
+    <Compile Include="DataModel\QuizQuestion.cs" />
+    <Compile Include="DataModel\SavedQuiz.cs" />
+    <Compile Include="DataModel\Series.cs" />
+    <Compile Include="DataModel\SqliteRepository.cs" />
+    <Compile Include="DataModel\User.cs" />
+    <Compile Include="DataModel\UserFavorite.cs" />
+    <Compile Include="DataModel\UserNote.cs" />
+    <Compile Include="DataModel\UserQuizQuestion.cs" />
+    <Compile Include="DataModel\StudyViewModel.cs" />
+    <Compile Include="DataModel\ViewModel.cs" />
+    <Compile Include="ElementDetailPage.xaml.cs">
+      <DependentUpon>ElementDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementGroup.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PuzzleElement.xaml.cs">
+      <DependentUpon>PuzzleElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PuzzlePage.xaml.cs">
+      <DependentUpon>PuzzlePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizDifficulty.cs" />
+    <Compile Include="QuizGeneratorPage.xaml.cs">
+      <DependentUpon>QuizGeneratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizPage.xaml.cs">
+      <DependentUpon>QuizPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizSelectionPage.xaml.cs">
+      <DependentUpon>QuizSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="StudyElement.xaml.cs">
+      <DependentUpon>StudyElement.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudyPage.xaml.cs">
+      <DependentUpon>StudyPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Assets\Elements\Thumbs.db" />
+    <None Include="InMyElement_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <Content Include="Assets\background.jpg" />
+    <Content Include="Assets\Elements\rhenium.jpg" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\Mode\logo.png" />
+    <Content Include="Assets\Mode\BlackPics\puzzle.png" />
+    <Content Include="Assets\Mode\BlackPics\periodic_table.png" />
+    <Content Include="Assets\Mode\BlackPics\quiz.png" />
+    <Content Include="Assets\Mode\periodic_table.png" />
+    <Content Include="Assets\Mode\puzzle.png" />
+    <Content Include="Assets\Mode\quiz.png" />
+    <Content Include="Assets\SmallLogo.scale-140.png" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
+    <Content Include="Assets\SmallLogo.scale-80.png" />
+    <Content Include="Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="Assets\TrophyIcons\catchtrophy.png" />
+    <Content Include="Assets\TrophyIcons\jumptrophy.png" />
+    <Content Include="Assets\TrophyIcons\trophy.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-80.png" />
+    <Content Include="Common\ReadMe.txt" />
+    <Content Include="inmyelement.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Elements\actinium.jpg" />
+    <Content Include="Assets\Elements\aluminum.jpg" />
+    <Content Include="Assets\Elements\americium.jpg" />
+    <Content Include="Assets\Elements\antimony.jpg" />
+    <Content Include="Assets\Elements\argon.jpg" />
+    <Content Include="Assets\Elements\arsenic.jpg" />
+    <Content Include="Assets\Elements\astatine.jpg" />
+    <Content Include="Assets\Elements\barium.jpg" />
+    <Content Include="Assets\Elements\berkelium.jpg" />
+    <Content Include="Assets\Elements\beryllium.jpg" />
+    <Content Include="Assets\Elements\bismuth.jpg" />
+    <Content Include="Assets\Elements\bohrium.jpg" />
+    <Content Include="Assets\Elements\boron.jpg" />
+    <Content Include="Assets\Elements\bromine.jpg" />
+    <Content Include="Assets\Elements\cadmium.jpg" />
+    <Content Include="Assets\Elements\cesium.jpg" />
+    <Content Include="Assets\Elements\calcium.jpg" />
+    <Content Include="Assets\Elements\californium.jpg" />
+    <Content Include="Assets\Elements\carbon.jpg" />
+    <Content Include="Assets\Elements\cerium.jpg" />
+    <Content Include="Assets\Elements\chlorine.jpg" />
+    <Content Include="Assets\Elements\chromium.jpg" />
+    <Content Include="Assets\Elements\cobalt.jpg" />
+    <Content Include="Assets\Elements\copernicium.jpg" />
+    <Content Include="Assets\Elements\copper.jpg" />
+    <Content Include="Assets\Elements\curium.jpg" />
+    <Content Include="Assets\Elements\darmstadtium.jpg" />
+    <Content Include="Assets\Elements\dubnium.jpg" />
+    <Content Include="Assets\Elements\dysprosium.jpg" />
+    <Content Include="Assets\Elements\einsteinium.jpg" />
+    <Content Include="Assets\Elements\erbium.jpg" />
+    <Content Include="Assets\Elements\europium.jpg" />
+    <Content Include="Assets\Elements\fermium.jpg" />
+    <Content Include="Assets\Elements\flerovium.jpg" />
+    <Content Include="Assets\Elements\fluorine.jpg" />
+    <Content Include="Assets\Elements\francium.jpg" />
+    <Content Include="Assets\Elements\gadolinium.jpg" />
+    <Content Include="Assets\Elements\gallium.jpg" />
+    <Content Include="Assets\Elements\germanium.jpg" />
+    <Content Include="Assets\Elements\gold.jpg" />
+    <Content Include="Assets\Elements\hafnium.jpg" />
+    <Content Include="Assets\Elements\hassium.jpg" />
+    <Content Include="Assets\Elements\helium.jpg" />
+    <Content Include="Assets\Elements\holmium.jpg" />
+    <Content Include="Assets\Elements\mercury.jpg" />
+    <Content Include="Assets\Elements\hydrogen.jpg" />
+    <Content Include="Assets\Elements\indium.jpg" />
+    <Content Include="Assets\Elements\iodine.jpg" />
+    <Content Include="Assets\Elements\iridium.jpg" />
+    <Content Include="Assets\Elements\iron.jpg" />
+    <Content Include="Assets\Elements\krypton.jpg" />
+    <Content Include="Assets\Elements\lanthanum.jpg" />
+    <Content Include="Assets\Elements\lawrencium.jpg" />
+    <Content Include="Assets\Elements\lead.jpg" />
+    <Content Include="Assets\Elements\lithium.jpg" />
+    <Content Include="Assets\Elements\livermorium.jpg" />
+    <Content Include="Assets\Elements\lutetium.jpg" />
+    <Content Include="Assets\Elements\magnesium.jpg" />
+    <Content Include="Assets\Elements\manganese.jpg" />
+    <Content Include="Assets\Elements\meitnerium.jpg" />
+    <Content Include="Assets\Elements\mendelevium.jpg" />
+    <Content Include="Assets\Elements\molybdenum.jpg" />
+    <Content Include="Assets\Elements\neodymium.jpg" />
+    <Content Include="Assets\Elements\neon.jpg" />
+    <Content Include="Assets\Elements\neptunium.jpg" />
+    <Content Include="Assets\Elements\nickel.jpg" />
+    <Content Include="Assets\Elements\niobium.jpg" />
+    <Content Include="Assets\Elements\nitrogen.jpg" />
+    <Content Include="Assets\Elements\nobelium.jpg" />
+    <Content Include="Assets\Elements\osmium.jpg" />
+    <Content Include="Assets\Elements\oxygen.jpg" />
+    <Content Include="Assets\Elements\palladium.jpg" />
+    <Content Include="Assets\Elements\phosphorus.jpg" />
+    <Content Include="Assets\Elements\platinum.jpg" />
+    <Content Include="Assets\Elements\plutonium.jpg" />
+    <Content Include="Assets\Elements\polonium.jpg" />
+    <Content Include="Assets\Elements\potassium.jpg" />
+    <Content Include="Assets\Elements\praseodymium.jpg" />
+    <Content Include="Assets\Elements\promethium.jpg" />
+    <Content Include="Assets\Elements\protactinium.jpg" />
+    <Content Include="Assets\Elements\radium.jpg" />
+    <Content Include="Assets\Elements\radon.jpg" />
+    <Content Include="Assets\Elements\rhenium-3.jpg" />
+    <Content Include="Assets\Elements\rhodium.jpg" />
+    <Content Include="Assets\Elements\roentgenium.jpg" />
+    <Content Include="Assets\Elements\rubidium.jpg" />
+    <Content Include="Assets\Elements\ruthenium.jpg" />
+    <Content Include="Assets\Elements\rutherfordium.jpg" />
+    <Content Include="Assets\Elements\samarium.jpg" />
+    <Content Include="Assets\Elements\scandium.jpg" />
+    <Content Include="Assets\Elements\seaborgium.jpg" />
+    <Content Include="Assets\Elements\selenium.jpg" />
+    <Content Include="Assets\Elements\silicon.jpg" />
+    <Content Include="Assets\Elements\silver.jpg" />
+    <Content Include="Assets\Elements\sodium.jpg" />
+    <Content Include="Assets\Elements\strontium.jpg" />
+    <Content Include="Assets\Elements\sulfur.jpg" />
+    <Content Include="Assets\Elements\tantalum.jpg" />
+    <Content Include="Assets\Elements\technetium.jpg" />
+    <Content Include="Assets\Elements\tellurium.jpg" />
+    <Content Include="Assets\Elements\terbium.jpg" />
+    <Content Include="Assets\Elements\thallium.jpg" />
+    <Content Include="Assets\Elements\thorium.jpg" />
+    <Content Include="Assets\Elements\thulium.jpg" />
+    <Content Include="Assets\Elements\tin.jpg" />
+    <Content Include="Assets\Elements\titanium.jpg" />
+    <Content Include="Assets\Elements\tungsten.jpg" />
+    <Content Include="Assets\Elements\ununoctium.jpg" />
+    <Content Include="Assets\Elements\ununpentium.jpg" />
+    <Content Include="Assets\Elements\ununseptium.jpg" />
+    <Content Include="Assets\Elements\ununtrium.jpg" />
+    <Content Include="Assets\Elements\uranium.jpg" />
+    <Content Include="Assets\Elements\vanadium.jpg" />
+    <Content Include="Assets\Elements\xenon.jpg" />
+    <Content Include="Assets\Elements\ytterbium.jpg" />
+    <Content Include="Assets\Elements\yttrium.jpg" />
+    <Content Include="Assets\Elements\zinc.jpg" />
+    <Content Include="Assets\Elements\zirconium.jpg" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="SQL\elements.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ElementDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PuzzleElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PuzzlePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizGeneratorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QuizPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizSelectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudyElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
